@@ -37,15 +37,40 @@ int init() {
     return true;
 }
 
+void input() {
+    SDL_Event event;
+
+    switch (event.type) {
+        case SDL_KEYUP:
+            break;
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym) {
+                case SDLK_ESCAPE
+            }
+            break;
+    }
+
+}
+
+void render() {
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    SDL_GL_SwapBuffers( );
+}
+
+void update(float* delta) {
+
+}
+
 int main() {
     bool running;
     float delta;
+    static float angle = 0.0f;
     running = init();
 
     while (running) {
         input();
-        update(&delta);
         render();
+        update(&delta);
     }
     return 0;
 }
