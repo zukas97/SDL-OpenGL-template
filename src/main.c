@@ -36,3 +36,16 @@ int init() {
 
     return true;
 }
+
+int main() {
+    bool running;
+    float delta;
+    running = init();
+
+    while (running) {
+        input();
+        update(&delta);
+        render();
+    }
+    return 0;
+}
